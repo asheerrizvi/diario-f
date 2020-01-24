@@ -1,0 +1,33 @@
+/* .sidepane {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.app-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+} */
+
+.columns {
+    height: 100%;
+}
+
+.column.is-12 {
+    font-family: 'Open Sans', sans-serif;
+    text-align: right;
+}
+
+.title.is-1 {
+    font-size: 6rem;
+    font-weight: 400;
+}
+
+.title.is-2 {
+    font-size: 3rem;
+    font-weight: 400;
+}
