@@ -1,18 +1,3 @@
-/* .sidepane {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.app-title {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 7rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-} */
-
 .columns {
     height: 100%;
 }
@@ -28,6 +13,21 @@
 }
 
 .title.is-2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 400;
+}
+
+.diario {
+    display: inline-block;
+    color: white;
+    background-color: black;
+}
+
+.continue-icon {
+    margin-top: 2rem;
+}
+
+fa-icon {
+    font-size: 56px;
+    cursor: pointer;
 }

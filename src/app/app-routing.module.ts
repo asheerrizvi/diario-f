@@ -5,7 +5,8 @@ import { LandingComponent } from './landing/landing.component';
 import { AuthComponent } from './auth/auth.component';
 
 const appRoutes: Routes = [
-    { path: '', component: LandingComponent }
+    { path: '', component: LandingComponent },
+    { path: 'auth', component: AuthComponent }
 ];
 
 @NgModule({

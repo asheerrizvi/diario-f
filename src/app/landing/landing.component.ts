@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -9,10 +10,14 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 })
 export class LandingComponent implements OnInit {
   faChevronRight = faChevronRight;
+  faArrowCircleRight = faArrowCircleRight;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  onContinue() {
+    this.router.navigate(['/auth']);
+  }
 }
