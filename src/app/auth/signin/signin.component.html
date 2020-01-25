@@ -1,1 +1,24 @@
-<p>signin works!</p>
+<div class="field">
+    <p class="control has-icons-left has-icons-right">
+        <input class="input is-medium" type="email" placeholder="Email">
+        <span class="icon is-small is-left">
+            <fa-icon [icon]="faEnvelope"></fa-icon>
+        </span>
+    </p>
+</div>
+<div class="field field-margin">
+    <p class="control has-icons-left">
+        <input class="input is-medium" type="password" placeholder="Password">
+        <span class="icon is-small is-left">
+            <fa-icon [icon]="faLock"></fa-icon>
+        </span>
+    </p>
+</div>
+<div class="field field-margin">
+    <p class="control">
+        <button class="button is-black">Login</button>
+    </p>
+</div>
+<div class="sign-up">
+    <p>Don't have an account?&nbsp;<a class="sign-up-url" (click)="onSignUp()">Create one</a></p>
+</div>

@@ -3,7 +3,6 @@
 }
 
 .column.is-12 {
-    font-family: 'Open Sans', sans-serif;
     text-align: right;
 }
 
@@ -28,6 +27,7 @@
 }
 
 fa-icon {
+    color: black;
     font-size: 56px;
     cursor: pointer;
 }

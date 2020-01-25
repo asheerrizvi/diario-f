@@ -1,1 +1,8 @@
-<p>auth works!</p>
+<div class="columns is-vcentered is-centered is-mobile">
+    <div class="column is-3" *ngIf="mode === 'signin'">
+        <app-signin></app-signin>
+    </div>
+    <div class="column is-3" *ngIf="mode === 'signup'">
+        <app-signup></app-signup>
+    </div>
+</div>
