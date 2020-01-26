@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
-import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -12,15 +11,16 @@ import { Subject } from 'rxjs';
 export class SigninComponent implements OnInit {
   faEnvelope = faEnvelope;
   faLock = faLock;
-  signUp =  new Subject<string>();
 
-  constructor(private router: Router) { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
   }
 
   onSignUp() {
-    this.signUp.next('signup');
+    this.authService.changeMode();
   }
 
 }

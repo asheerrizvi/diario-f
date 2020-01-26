@@ -1,8 +1,8 @@
 <div class="columns is-vcentered is-centered is-mobile">
-    <div class="column is-3" *ngIf="mode === 'signin'">
+    <div class="column is-3" *ngIf="authMode === 'sign-in'">
         <app-signin></app-signin>
     </div>
-    <div class="column is-3" *ngIf="mode === 'signup'">
+    <div class="column is-3" *ngIf="authMode === 'sign-up'">
         <app-signup></app-signup>
     </div>
 </div>
