@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
-import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',

@@ -18,6 +18,6 @@ export class LandingComponent implements OnInit {
   }
 
   onContinue() {
-    this.router.navigate(['/auth']);
+    this.router.navigate(['/login']);
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
-import { AuthService } from '../auth.service';
+import { faEnvelope, faLock, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -11,16 +11,15 @@ import { AuthService } from '../auth.service';
 export class SigninComponent implements OnInit {
   faEnvelope = faEnvelope;
   faLock = faLock;
+  faTimes = faTimes;
 
-  constructor(
-    private authService: AuthService
-  ) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   onSignUp() {
-    this.authService.changeMode();
+    this.router.navigate(['/signup']);
   }
 
 }
