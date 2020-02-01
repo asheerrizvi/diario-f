@@ -8,6 +8,7 @@ import { LandingComponent } from './landing/landing.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
+import { LedgerComponent } from './ledger/ledger.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HeaderComponent } from './header/header.component';
     LandingComponent,
     SigninComponent,
     SignupComponent,
-    HeaderComponent
+    HeaderComponent,
+    LedgerComponent
   ],
   imports: [
     AppRoutingModule,

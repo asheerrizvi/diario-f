@@ -1,5 +1,5 @@
 .columns {
-    height: 100%;
+    height: calc(100vh - 8vh);
 }
 
 .box {

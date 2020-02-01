@@ -1,0 +1,37 @@
+<div class="columns is-centered is-full-height">
+    <div class="column is-6">
+        <div class="columns is-vcentered is-mobile" style="border-bottom: 1px solid red;">
+            <div class="column">
+                <p class="current-date">{{ currentDate }}</p>
+            </div>
+            <div class="column">
+                <button class="button is-pulled-right">
+                    <span class="icon">
+                        <fa-icon [icon]="faPlus"></fa-icon>
+                    </span>
+                </button>
+                <!-- <button class="button is-pulled-right">
+                    <span class="icon">
+                        <fa-icon [icon]="faSearch"></fa-icon>
+                    </span>
+                </button> -->
+            </div>
+        </div>
+        <div class="columns is-mobile" style="margin-top: 2rem;">
+            <div class="column">
+                <p class="entries">Your Entries</p>
+            </div>
+        </div>
+        <div class="columns is-mobile" style="margin-top: 2rem;">
+            <div class="column">
+                <article class="message is-dark">
+                    <div class="message-body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>.
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div class="column is-6">
+    </div>
+</div>
