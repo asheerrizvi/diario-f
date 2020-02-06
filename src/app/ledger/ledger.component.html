@@ -1,37 +1,38 @@
-<div class="columns is-centered is-full-height">
-    <div class="column is-6">
-        <div class="columns is-vcentered is-mobile" style="border-bottom: 1px solid red;">
-            <div class="column">
-                <p class="current-date">{{ currentDate }}</p>
-            </div>
-            <div class="column">
-                <button class="button is-pulled-right">
-                    <span class="icon">
-                        <fa-icon [icon]="faPlus"></fa-icon>
-                    </span>
-                </button>
-                <!-- <button class="button is-pulled-right">
-                    <span class="icon">
-                        <fa-icon [icon]="faSearch"></fa-icon>
-                    </span>
-                </button> -->
-            </div>
-        </div>
-        <div class="columns is-mobile" style="margin-top: 2rem;">
-            <div class="column">
-                <p class="entries">Your Entries</p>
-            </div>
-        </div>
-        <div class="columns is-mobile" style="margin-top: 2rem;">
-            <div class="column">
-                <article class="message is-dark">
-                    <div class="message-body">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>.
-                    </div>
-                </article>
-            </div>
-        </div>
-    </div>
-    <div class="column is-6">
+<div class="columns is-centered">
+    <div class="column is-12">
+        <h1 class="title is-1">{{ currentDate }}</h1>
     </div>
 </div>
+<div class="columns is-mobile" style="margin-top: 3.5rem;">
+    <div class="column is-3">
+        <div class="field is-grouped">
+            <div class="control is-expanded has-icons-left">
+                <input class="input is-rounded" type="text" placeholder="Search">
+                <span class="icon is-left">
+                    <fa-icon [icon]="faSearch"></fa-icon>
+                </span>
+            </div>
+            <p class="control">
+                <a class="button is-success add-entry">
+                    <span class="icon is-small">
+                        <fa-icon [icon]="faPlus"></fa-icon>
+                    </span>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="columns is-multiline is-vcentered" style="padding-top: 1.5rem;">
+    <div class="column is-3" *ngFor="let number of [0,1,2,3,4,5,6,7]">
+        <article class="message">
+            <div class="message-header">
+                <p>{{ currentDate }}</p>
+                <button class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum...
+            </div>
+        </article>
+    </div>
+</div>
+
