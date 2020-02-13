@@ -1,7 +1,13 @@
-<div class="columns is-vcentered is-pulled-right">
-    <div class="column is-12">
-        <h1 class="title is-1">Welcome to <p class="diario">Diario!</p></h1>
-        <h2 class="title is-2">A minimalistic<br>no bullsh*t<br>ledger<br></h2>
-        <div class="continue-icon"><fa-icon [icon]="faArrowCircleRight" (click)="onContinue()"></fa-icon></div>
+<div class="columns">
+    <div class="column is-6">
+        <p class="title is-1 is-spaced">Diario.</p>
+        <p class="subtitle is-4">a minimalistic<br>no bullsh*t<br>ledger<br></p>
+    </div>
+    <div class="column is-6">
+        <div class="columns is-centered">
+            <div class="column is-6">
+                <app-signin></app-signin>
+            </div>
+        </div>
     </div>
 </div>
