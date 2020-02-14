@@ -13,9 +13,10 @@ export class SignupComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+    this.signupService.changeMode('signup');
   }
 
   ngOnDestroy() {
-    this.signupService.mode = 'signin';
+    this.signupService.changeMode('signin');
   }
 }

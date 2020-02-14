@@ -18,12 +18,16 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.mode = this.signupService.mode;
+    this.signupService.mode.subscribe(
+      mode => {
+        this.mode = mode;
+      }
+    );
   }
 
   onSignup() {
     this.mode = 'signup';
-    this.signupService.mode = this.mode;
+    this.signupService.changeMode('signup');
     this.router.navigate(['signup']);
   }
 }
