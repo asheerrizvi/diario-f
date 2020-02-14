@@ -20,7 +20,8 @@
     font-size: 18px;
 }
 
-.button {
+.button, .button:hover {
     background-color: #8D6B94;
     font-size: 18px;
+    color: white;
 }
