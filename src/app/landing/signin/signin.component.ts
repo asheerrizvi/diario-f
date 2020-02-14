@@ -1,25 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-
-import { faEnvelope, faLock, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { SignupService } from '../signup/signup.service';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
-export class SigninComponent implements OnInit {
-  faEnvelope = faEnvelope;
-  faLock = faLock;
-  faTimes = faTimes;
-
-  constructor(private router: Router) { }
+export class SigninComponent implements OnInit, OnDestroy {
+  constructor(
+    private signupService: SignupService
+  ) { }
 
   ngOnInit() {
   }
 
-  onSignUp() {
-    this.router.navigate(['/signup']);
+  ngOnDestroy() {
+    this.signupService.mode = 'signup';
   }
-
 }

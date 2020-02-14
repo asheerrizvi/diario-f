@@ -15,10 +15,10 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-rounded">
+          <a class="button is-rounded" (click)="onSignup()" *ngIf="mode === 'signin'">
             Sign up
           </a>
-          <a href="" class="button is-rounded">
+          <a href="https://github.com/asheerrizvi/diario-f" target="_blank" class="button is-rounded">
             <span class="icon">
               <fa-icon [icon]="faGithub"></fa-icon>
             </span>

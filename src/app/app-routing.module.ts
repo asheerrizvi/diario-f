@@ -7,12 +7,11 @@ import { SignupComponent } from './landing/signup/signup.component';
 import { LedgerComponent } from './ledger/ledger.component';
 
 const appRoutes: Routes = [
-    { path: '', component: LandingComponent },
-    { path: 'login', component: SigninComponent },
-    { path: 'signup', component: SignupComponent },
-    { path: 'signup', component: SignupComponent },
+    { path: '', component: LandingComponent, children: [
+        { path: '', component: SigninComponent },
+        { path: 'signup', component: SignupComponent }
+    ] },
     { path: 'ledger', component: LedgerComponent },
-    { path: 'signin', redirectTo:  '/login'}
 ];
 
 @NgModule({
