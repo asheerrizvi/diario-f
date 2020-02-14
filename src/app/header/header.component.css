@@ -1,0 +1,13 @@
+.button {
+    border-color: #8D6B94;
+    color: #8D6B94;
+}
+
+.button:hover {
+    background-color: #8D6B94;
+    color: white;
+}
+
+fa-icon {
+    font-size: 24px;
+}
