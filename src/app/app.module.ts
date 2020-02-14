@@ -5,8 +5,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './landing/signin/signin.component';
+import { SignupComponent } from './landing/signup/signup.component';
 import { HeaderComponent } from './header/header.component';
 import { LedgerComponent } from './ledger/ledger.component';
 
