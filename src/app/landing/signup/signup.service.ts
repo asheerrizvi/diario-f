@@ -5,8 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SignupService {
-  mode = new BehaviorSubject<string>('signin');
-  // mode = 'signin';
+  private mode = new BehaviorSubject<string>('signin');
 
   constructor() { }
 
