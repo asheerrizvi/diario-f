@@ -4,7 +4,7 @@
     </div>
 </div>
 <div class="columns is-mobile" style="margin-top: 3.5rem;">
-    <div class="column is-3">
+    <div class="column is-3 is-offset-9">
         <div class="field is-grouped">
             <div class="control is-expanded has-icons-left">
                 <input class="input is-rounded" type="text" placeholder="Search">
@@ -15,7 +15,14 @@
             <p class="control">
                 <a class="button is-success add-entry">
                     <span class="icon is-small">
-                        <fa-icon [icon]="faPlus"></fa-icon>
+                        <fa-icon [icon]="faFilter"></fa-icon>
+                    </span>
+                </a>
+            </p>
+            <p class="control">
+                <a class="button is-success add-entry">
+                    <span class="icon is-small">
+                        <fa-icon [icon]="faFile"></fa-icon>
                     </span>
                 </a>
             </p>
@@ -35,4 +42,3 @@
         </article>
     </div>
 </div>
-

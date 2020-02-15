@@ -1,7 +1,28 @@
+@media only screen and (min-width: 768px) {
+    .notification {
+        display: block;
+        position: fixed;
+        bottom: 3vh;
+        right: 3vh;
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .notification {
+        width: 70vw;
+        position: fixed;
+        bottom: 2vh;
+        right: 2vh;
+        border-radius: 10px;
+    }
+}
+
 .sign-in-text {
     font-size: 22px;
     margin-bottom: 1.25rem;
     font-family: 'Muli', Sans-Serif;
+    color: #707070;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

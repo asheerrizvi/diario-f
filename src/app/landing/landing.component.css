@@ -1,9 +1,11 @@
 .title.is-1 {
     font-family: 'Merriweather', Serif;
     font-size: 80px;
+    color: #4d4d4d;
 }
 
 .subtitle.is-4 {
     font-family: 'Muli', Sans-Serif;
     font-size: 36px;
+    color: #707070;
 }

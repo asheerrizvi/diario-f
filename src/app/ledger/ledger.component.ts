@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faSearch, faFilter, faFile } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-ledger',
@@ -10,6 +10,8 @@ import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 export class LedgerComponent implements OnInit {
   faPlus = faPlus;
   faSearch = faSearch;
+  faFile = faFile;
+  faFilter = faFilter;
 
   options = { 
     weekday: 'long',

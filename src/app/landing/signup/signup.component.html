@@ -1,18 +1,32 @@
 <p class="sign-in-text">Create an account</p>
-<div class="field">
-  <p class="control">
-    <input class="input is-rounded" type="email" placeholder="Email">
-  </p>
-</div>
-<div class="field">
-  <p class="control" style="margin-bottom: 1.85rem;">
-    <input class="input is-rounded" type="password" placeholder="Password">
-  </p>
-</div>
-<div class="field">
-  <p class="control">
-    <button class="button is-primary is-rounded" style="width: 100%;">
-      Sign Up
-    </button>
-  </p>
+<form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+  <div class="field">
+    <p class="control">
+      <input 
+        class="input is-rounded" 
+        type="email" 
+        placeholder="Email"
+        formControlName="email">
+    </p>
+  </div>
+  <div class="field">
+    <p class="control">
+      <input 
+        class="input is-rounded" 
+        type="password" 
+        placeholder="Password"
+        formControlName="password">
+    </p>
+  </div>
+  <div class="field">
+    <p class="control">
+      <button class="button is-primary is-rounded" style="width: 100%; margin-bottom: 1.85rem;">
+        Sign Up
+      </button>
+    </p>
+  </div>
+</form>
+<div class="notification is-danger" *ngIf="showNotification">
+  <button class="delete" (click)="closeNotification()"></button>
+  You have provided an invalid email or password.
 </div>
