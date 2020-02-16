@@ -1,5 +1,10 @@
 <p class="sign-in-text">Create an account</p>
-<form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+<div class="columns is-centered" *ngIf="isLoading">
+  <div class="column is-half">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+</div>
+<form [formGroup]="signupForm" (ngSubmit)="onSignup()" *ngIf="!isLoading">
   <div class="field">
     <p class="control">
       <input 
@@ -37,5 +42,5 @@
 </form>
 <div class="notification is-danger" *ngIf="showNotification">
   <button class="delete" (click)="closeNotification()"></button>
-  You have provided an invalid email or password.
+  {{ error }}
 </div>

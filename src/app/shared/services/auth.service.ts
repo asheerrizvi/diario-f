@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
@@ -25,18 +25,31 @@ export class AuthService {
         email,
         password
       }
-    );
+    ).pipe(catchError(errorResponse => {
+      let errorMessage = 'An error has occured!';
+      if (!errorResponse.error) {
+        return throwError(errorMessage)
+      }
+      errorMessage = errorResponse.error;
+      return throwError(errorMessage);
+    }));
   }
 
   signin(email: string, password: string) {
-    console.log()
-    return this.http.post<string>(
+    return this.http.post<any>(
       'http://localhost:3000/api/auth',
       {
         email,
         password
       }
-    );
+    ).pipe(catchError(errorResponse => {
+      let errorMessage = 'An error has occured!';
+      if (!errorResponse.error) {
+        return throwError(errorMessage)
+      }
+      errorMessage = errorResponse.error;
+      return throwError(errorMessage);
+    }));
   }
 
   // login(email: string, password: string) {

@@ -11,6 +11,7 @@ import { SigninComponent } from './landing/signin/signin.component';
 import { SignupComponent } from './landing/signup/signup.component';
 import { HeaderComponent } from './header/header.component';
 import { LedgerComponent } from './ledger/ledger.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LedgerComponent } from './ledger/ledger.component';
     SigninComponent,
     SignupComponent,
     HeaderComponent,
-    LedgerComponent
+    LedgerComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     AppRoutingModule,

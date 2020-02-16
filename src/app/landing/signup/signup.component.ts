@@ -10,6 +10,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class SignupComponent implements OnInit, OnDestroy {
   signupForm: FormGroup;
   showNotification = false;
+  isLoading = false;
+  error: string = null;
 
   constructor(
     private authService: AuthService
@@ -32,11 +34,14 @@ export class SignupComponent implements OnInit, OnDestroy {
     const name = this.signupForm.value.name;
     const email = this.signupForm.value.email;
     const password = this.signupForm.value.password;
+    this.isLoading = true;
       
     this.authService.signup(name, email, password).subscribe(response => {
-      console.log(response)
-    }, error => {
-      console.log(error)
+      this.isLoading = false;
+    }, (errorMessage) => {
+      this.isLoading = false;
+      this.error = errorMessage;
+      this.showNotification = true;
     });
 
     this.signupForm.reset();

@@ -10,6 +10,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class SigninComponent implements OnInit, OnDestroy {
   signinForm: FormGroup;
   showNotification = false;
+  isLoading = false;
+  error: string = null;
 
   constructor(
     private authService: AuthService
@@ -23,11 +25,22 @@ export class SigninComponent implements OnInit, OnDestroy {
   }
   
   onSignin() {
-    if (!(this.signinForm.get('email').valid || this.signinForm.get('password').valid)) {
+    if (!( this.signinForm.get('email').valid || this.signinForm.get('password').valid)) {
       this.showNotification = true;
-    } else {
-      this.authService.signin(this.signinForm.value.email, this.signinForm.value.password);
+      return;
     }
+    const email = this.signinForm.value.email;
+    const password = this.signinForm.value.password;
+    this.isLoading = true;
+      
+    this.authService.signin(email, password).subscribe(response => {
+      console.log(response);
+      this.isLoading = false;
+    }, (errorMessage) => {
+      this.isLoading = false;
+      this.error = errorMessage;
+      this.showNotification = true;
+    });
 
     this.signinForm.reset();
   }
