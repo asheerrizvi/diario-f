@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SignupService } from '../signup/signup.service';
+import { AuthService } from '../../shared/services/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -12,7 +12,7 @@ export class SigninComponent implements OnInit, OnDestroy {
   showNotification = false;
 
   constructor(
-    private signupService: SignupService
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -23,10 +23,13 @@ export class SigninComponent implements OnInit, OnDestroy {
   }
   
   onSignin() {
-    console.log(this.signinForm);
     if (!(this.signinForm.get('email').valid || this.signinForm.get('password').valid)) {
       this.showNotification = true;
+    } else {
+      this.authService.signin(this.signinForm.value.email, this.signinForm.value.password);
     }
+
+    this.signinForm.reset();
   }
 
   closeNotification() {
@@ -34,6 +37,6 @@ export class SigninComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.signupService.changeMode('signup');
+    this.authService.changeMode('signup');
   }
 }

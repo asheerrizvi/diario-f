@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Router } from '@angular/router';
-import { SignupService } from '../landing/signup/signup.service';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -14,11 +14,11 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private signupService: SignupService
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
-    this.signupService.mode.subscribe(
+    this.authService.mode.subscribe(
       mode => {
         this.mode = mode;
       }
@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
 
   onSignup() {
     this.mode = 'signup';
-    this.signupService.changeMode('signup');
+    this.authService.changeMode('signup');
     this.router.navigate(['signup']);
   }
 }

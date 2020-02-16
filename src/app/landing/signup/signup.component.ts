@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SignupService } from './signup.service';
+import { AuthService } from '../../shared/services/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -12,22 +12,34 @@ export class SignupComponent implements OnInit, OnDestroy {
   showNotification = false;
 
   constructor(
-    private signupService: SignupService
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
-    this.signupService.changeMode('signup');
+    this.authService.changeMode('signup');
     this.signupForm = new FormGroup({
+      'name': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'password': new FormControl(null, Validators.required)
     });
   }
 
   onSignup() {
-    console.log(this.signupForm);
-    if (!(this.signupForm.get('email').valid || this.signupForm.get('password').valid)) {
+    if (!( this.signupForm.get('name').valid || this.signupForm.get('email').valid || this.signupForm.get('password').valid)) {
       this.showNotification = true;
+      return;
     }
+    const name = this.signupForm.value.name;
+    const email = this.signupForm.value.email;
+    const password = this.signupForm.value.password;
+      
+    this.authService.signup(name, email, password).subscribe(response => {
+      console.log(response)
+    }, error => {
+      console.log(error)
+    });
+
+    this.signupForm.reset();
   }
 
   closeNotification() {
@@ -35,6 +47,6 @@ export class SignupComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.signupService.changeMode('signin');
+    this.authService.changeMode('signin');
   }
 }
