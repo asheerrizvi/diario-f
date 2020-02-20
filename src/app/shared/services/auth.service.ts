@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, throwError, Subject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
+
+import { User } from '../models/user.model';
 
 export interface AuthResponseData {
   id: string;
@@ -14,6 +16,7 @@ export interface AuthResponseData {
   providedIn: 'root'
 })
 export class AuthService {
+  user = new Subject<User>();
   mode = new BehaviorSubject<string>('signin');
 
   constructor(
@@ -32,7 +35,14 @@ export class AuthService {
         email,
         password
       }
-    ).pipe(catchError(this.handleError));
+    ).pipe(catchError(this.handleError), tap(res => {
+      this.handleAuthentication(
+        res.id,
+        res.name,
+        res.email,
+        res.token
+      );
+    }));
   }
 
   signin(email: string, password: string) {
@@ -42,7 +52,24 @@ export class AuthService {
         email,
         password
       }
-    ).pipe(catchError(this.handleError));
+    ).pipe(catchError(this.handleError), tap(res => {
+      this.handleAuthentication(
+        res.id,
+        res.name,
+        res.email,
+        res.token
+      );
+    }));
+  }
+
+  private handleAuthentication(id: string, name: string, email: string, token: string) {
+    const user = new User(
+      id,
+      name,
+      email,
+      token
+    );
+    this.user.next(user);
   }
 
   private handleError(errorResponse: HttpErrorResponse) {

@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit, OnDestroy {
       this.showNotification = true;
       return;
     }
-    const name = this.signupForm.value.name;
+    const name = this.signupForm.value.name.trim();
     const email = this.signupForm.value.email;
     const password = this.signupForm.value.password;
     this.isLoading = true;

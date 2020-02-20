@@ -29,7 +29,7 @@ export class SigninComponent implements OnInit, OnDestroy {
       this.showNotification = true;
       return;
     }
-    const email = this.signinForm.value.email;
+    const email = this.signinForm.value.email.trim();
     const password = this.signinForm.value.password;
     this.isLoading = true;
 
