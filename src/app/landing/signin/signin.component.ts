@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -14,7 +15,8 @@ export class SigninComponent implements OnInit, OnDestroy {
   error: string = null;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -38,6 +40,7 @@ export class SigninComponent implements OnInit, OnDestroy {
     signinObservable.subscribe(response => {
       console.log(response);
       this.isLoading = false;
+      this.router.navigate(['/notes']);
     }, (errorMessage) => {
       this.isLoading = false;
       this.error = errorMessage;

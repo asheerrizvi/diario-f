@@ -4,6 +4,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
 import { User } from '../models/user.model';
+import { Router } from '@angular/router';
 
 export interface AuthResponseData {
   id: string;
@@ -16,11 +17,12 @@ export interface AuthResponseData {
   providedIn: 'root'
 })
 export class AuthService {
-  user = new Subject<User>();
+  user = new BehaviorSubject<User>(null);
   mode = new BehaviorSubject<string>('signin');
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   changeMode(mode: string) {
@@ -62,6 +64,32 @@ export class AuthService {
     }));
   }
 
+  autoLogin() {
+    const userData: {
+      id: string,
+      name: string,
+      emaiL: string,
+      _token: string
+    } = JSON.parse(localStorage.getItem('user'));
+    if (!userData) {
+      return;
+    }
+
+    const loadedUser = new User(userData.id, userData.name, userData.emaiL, userData._token);
+
+    if (loadedUser.token) {
+      this.user.next(loadedUser);
+      this.router.navigate(['/notes']);
+    }
+  }
+
+  logout() {
+    this.user.next(null);
+    this.router.navigate(['/']);
+    this.changeMode('signin');
+    localStorage.removeItem('user');
+  }
+
   private handleAuthentication(id: string, name: string, email: string, token: string) {
     const user = new User(
       id,
@@ -70,6 +98,7 @@ export class AuthService {
       token
     );
     this.user.next(user);
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
   private handleError(errorResponse: HttpErrorResponse) {

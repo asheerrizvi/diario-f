@@ -1,6 +1,6 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" routerLink="/" style="padding-left: 0;">
+    <a class="navbar-item" href="/" style="padding-left: 0;">
       <p class="brand"><strong>Diario.</strong></p>
     </a>
 
@@ -18,7 +18,7 @@
           <a class="button is-rounded" (click)="onSignup()" *ngIf="mode === 'signin'">
             Sign up
           </a>
-          <a href="https://github.com/asheerrizvi/diario-f" target="_blank" class="button is-rounded">
+          <a href="https://github.com/asheerrizvi/diario-f" target="_blank" class="button is-rounded" *ngIf="!isAuthenticated">
             <span class="icon">
               <fa-icon [icon]="faGithub"></fa-icon>
             </span>
@@ -26,9 +26,14 @@
               Github
             </span>
           </a>
-          <!-- <a class="button is-light">
-            Log in
-          </a> -->
+          <a class="button is-rounded" (click)="onLogout()" *ngIf="isAuthenticated">
+            <span class="icon">
+              <fa-icon [icon]="faSignOutAlt"></fa-icon>
+            </span>
+            <span>
+              Logout
+            </span>
+          </a>
         </div>
       </div>
     </div>

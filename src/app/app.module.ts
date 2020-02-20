@@ -10,7 +10,7 @@ import { LandingComponent } from './landing/landing.component';
 import { SigninComponent } from './landing/signin/signin.component';
 import { SignupComponent } from './landing/signup/signup.component';
 import { HeaderComponent } from './header/header.component';
-import { LedgerComponent } from './ledger/ledger.component';
+import { NotesComponent } from './notes/notes.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     SigninComponent,
     SignupComponent,
     HeaderComponent,
-    LedgerComponent,
+    NotesComponent,
     LoadingSpinnerComponent
   ],
   imports: [

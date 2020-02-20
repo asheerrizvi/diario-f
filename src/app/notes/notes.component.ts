@@ -3,17 +3,17 @@ import { Component, OnInit } from '@angular/core';
 import { faPlus, faSearch, faFilter, faFile } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-ledger',
-  templateUrl: './ledger.component.html',
-  styleUrls: ['./ledger.component.css']
+  selector: 'app-notes',
+  templateUrl: './notes.component.html',
+  styleUrls: ['./notes.component.css']
 })
-export class LedgerComponent implements OnInit {
+export class NotesComponent implements OnInit {
   faPlus = faPlus;
   faSearch = faSearch;
   faFile = faFile;
   faFilter = faFilter;
 
-  options = { 
+  options = {
     weekday: 'long',
     year: 'numeric',
     month: 'short',
