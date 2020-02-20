@@ -20,9 +20,9 @@ export class SignupComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.authService.changeMode('signup');
     this.signupForm = new FormGroup({
-      'name': new FormControl(null, Validators.required),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'password': new FormControl(null, Validators.required)
+      name: new FormControl(null, Validators.required),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, Validators.required)
     });
   }
 
@@ -35,8 +35,10 @@ export class SignupComponent implements OnInit, OnDestroy {
     const email = this.signupForm.value.email;
     const password = this.signupForm.value.password;
     this.isLoading = true;
-      
-    this.authService.signup(name, email, password).subscribe(response => {
+
+    const signupObservable = this.authService.signup(name, email, password);
+
+    signupObservable.subscribe(response => {
       this.isLoading = false;
     }, (errorMessage) => {
       this.isLoading = false;

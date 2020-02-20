@@ -19,11 +19,11 @@ export class SigninComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.signinForm = new FormGroup({
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'password': new FormControl(null, Validators.required)
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, Validators.required)
     });
   }
-  
+
   onSignin() {
     if (!( this.signinForm.get('email').valid || this.signinForm.get('password').valid)) {
       this.showNotification = true;
@@ -32,8 +32,10 @@ export class SigninComponent implements OnInit, OnDestroy {
     const email = this.signinForm.value.email;
     const password = this.signinForm.value.password;
     this.isLoading = true;
-      
-    this.authService.signin(email, password).subscribe(response => {
+
+    const signinObservable = this.authService.signin(email, password);
+
+    signinObservable.subscribe(response => {
       console.log(response);
       this.isLoading = false;
     }, (errorMessage) => {
