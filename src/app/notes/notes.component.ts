@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faPlus, faSearch, faFilter, faFile } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-notes',
@@ -9,22 +10,11 @@ import { faPlus, faSearch, faFilter, faFile } from '@fortawesome/free-solid-svg-
 })
 export class NotesComponent implements OnInit {
   faPlus = faPlus;
-  faSearch = faSearch;
-  faFile = faFile;
-  faFilter = faFilter;
 
-  options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  };
-  currentDate;
+  now = moment().format('MMM Do, YYYY');
 
   constructor() { }
 
   ngOnInit() {
-    this.currentDate =  new Date().toLocaleTimeString('en-us', this.options).split(',').splice(0, 3);
   }
-
 }

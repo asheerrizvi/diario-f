@@ -1,15 +1,21 @@
-.title.is-1 {
-    font-size: 5rem;
+.card {
+    border-radius: 15px;
+    background: rgb(156,126,162);
+    background: linear-gradient(112deg, rgba(156,126,162,1) 0%, rgba(227,192,235,1) 100%);
 }
 
-.is-full-height {
-    height: calc(100vh - 8vh);
+.card-content {
+    padding: 2.5rem 2.25rem;
 }
 
-.actions {
-    margin-top: 3rem;
-}
-
-.add-entry {
+.button {
+    border: 2px solid rgba(#FFF, 0.6);
     border-radius: 50%;
+    box-shadow: 0px 10px 30px -14px rgb(117, 117, 117);
+    transition: all 350ms ease;
+    transition-timing-function: cubic-bezier(0.05,1.8,1,1.57);
+}
+
+fa-icon {
+    color: #8D6B94;
 }

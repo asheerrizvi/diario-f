@@ -1,44 +1,28 @@
-<!-- <div class="columns is-centered">
-    <div class="column is-12">
-        <h1 class="title is-1">{{ currentDate }}</h1>
-    </div>
-</div>
-<div class="columns is-mobile" style="margin-top: 3.5rem;">
-    <div class="column is-3 is-offset-9">
-        <div class="field is-grouped">
-            <div class="control is-expanded has-icons-left">
-                <input class="input is-rounded" type="text" placeholder="Search">
-                <span class="icon is-left">
-                    <fa-icon [icon]="faSearch"></fa-icon>
-                </span>
+<div class="columns">
+    <div class="column is-6">
+        <div class="card">
+            <div class="card-content">
+                <div class="columns is-vcentered">
+                    <div class="column">
+                        <p class="subtitle is-4" style="color: white;">Today is</p>
+                        <p class="title is-2" style="color: white;">{{ now }}</p>
+                    </div>
+                    <div class="column">
+                        <button class="button is-large is-pulled-right">
+                            <span class="icon">
+                                <fa-icon [icon]="faPlus"></fa-icon>
+                            </span>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <p class="control">
-                <a class="button is-success add-entry">
-                    <span class="icon is-small">
-                        <fa-icon [icon]="faFilter"></fa-icon>
-                    </span>
-                </a>
-            </p>
-            <p class="control">
-                <a class="button is-success add-entry">
-                    <span class="icon is-small">
-                        <fa-icon [icon]="faFile"></fa-icon>
-                    </span>
-                </a>
-            </p>
+        </div>
+        <div class="columns">
+            <div class="column is-centered">
+                <p class="title is-3">Your Notes</p>
+            </div>
         </div>
     </div>
-</div>
-<div class="columns is-multiline is-vcentered" style="padding-top: 1.5rem;">
-    <div class="column is-3" *ngFor="let number of [0,1,2,3,4,5,6,7]">
-        <article class="message">
-            <div class="message-header">
-                <p>{{ currentDate }}</p>
-                <button class="delete" aria-label="delete"></button>
-            </div>
-            <div class="message-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum...
-            </div>
-        </article>
+    <div class="column is-6">
     </div>
-</div> -->
+</div>
