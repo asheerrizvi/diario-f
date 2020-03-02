@@ -1,11 +1,11 @@
 .card {
-    border-radius: 15px;
-    background: rgb(156,126,162);
-    background: linear-gradient(112deg, rgba(156,126,162,1) 0%, rgba(227,192,235,1) 100%);
+    border-radius: 5px;
+    background: rgb(223, 172, 235);
+    background: linear-gradient(112deg, rgb(223, 172, 235, 1) 0%, rgb(231, 208, 236) 100%);
 }
 
 .card-content {
-    padding: 2.5rem 2.25rem;
+    padding: 2rem 1.75rem;
 }
 
 .button {
@@ -18,4 +18,14 @@
 
 fa-icon {
     color: #8D6B94;
+}
+
+.message {
+    margin-bottom: 1rem;
+}
+
+.message-body {
+    border-width: 0 0 0 8px;
+    border-color: #8D6B94;
+    padding: 0.75rem 1.5rem;
 }
