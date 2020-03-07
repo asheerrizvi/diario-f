@@ -4,11 +4,11 @@
             <div class="card-content">
                 <div class="columns is-vcentered">
                     <div class="column">
-                        <p class="subtitle is-4" style="color: white;">Today is</p>
-                        <p class="title is-2" style="color: white;">{{ now }}</p>
+                        <p class="subtitle" style="color: white;">Today is</p>
+                        <p class="title is-3" style="color: white;">{{ now }}</p>
                     </div>
                     <div class="column">
-                        <button class="button is-large is-pulled-right">
+                        <button class="button is-medium is-pulled-right new-item">
                             <span class="icon">
                                 <fa-icon [icon]="faPlus"></fa-icon>
                             </span>
@@ -53,5 +53,22 @@
         </div>
     </div>
     <div class="column is-6">
+        <div class="field">
+            <div class="control">
+                <textarea class="textarea is-large" placeholder="Quick Note"></textarea>
+            </div>
+        </div>
+        <div class="field is-grouped is-pulled-right">
+            <p class="control">
+              <button class="button is-link is-rounded">
+                Save
+              </button>
+            </p>
+            <p class="control">
+              <button class="button is-rounded" style="background-color: #F15056; color: white;">
+                Cancel
+              </button>
+            </p>
+          </div>
     </div>
 </div>

@@ -8,12 +8,16 @@
     color: white;
 }
 
-fa-icon {
-    font-size: 18px;
-}
-
 .brand {
     font-family: 'Merriweather', Serif;
     color: #8D6B94;
     font-size: 36px;
+}
+
+.icon {
+    color: #8D6B94;
+}
+
+a.navbar-link::after {
+    border-color: #8D6B94;
 }

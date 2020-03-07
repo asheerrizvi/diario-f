@@ -10,11 +10,15 @@ import * as moment from 'moment';
 })
 export class NotesComponent implements OnInit {
   faPlus = faPlus;
+  localeString = 'en';
+  viewDate: any;
 
   now = moment().format('MMM Do, YYYY');
 
   constructor() { }
 
   ngOnInit() {
+    moment.locale(this.localeString);
+    this.viewDate = moment();
   }
 }

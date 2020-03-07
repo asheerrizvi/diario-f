@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt, faUser, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
 import { Subscription } from 'rxjs';
@@ -15,8 +14,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private modeSubscription: Subscription;
   private userSubscription: Subscription;
 
-  faGithub = faGithub;
   faSignOutAlt = faSignOutAlt;
+  faUser = faUser;
+  faEdit = faEdit;
   mode: string;
 
   constructor(

@@ -13,26 +13,27 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-end">
-      <div class="navbar-item" style="padding-right: 0;">
-        <div class="buttons">
-          <a class="button is-rounded" (click)="onSignup()" *ngIf="mode === 'signin'">
-            Sign up
+      <div class="buttons">
+        <a class="button is-rounded" (click)="onSignup()" *ngIf="mode === 'signin'">
+          <strong>Sign up</strong>
+        </a>
+      </div>
+      
+      <div class="navbar-item has-dropdown is-hoverable" *ngIf="isAuthenticated">
+        <a class="navbar-link" style="border-radius: 10px;">
+          <span class="icon">
+            <fa-icon [icon]="faUser" style="font-size: 22px;"></fa-icon>
+          </span>
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item">
+            Edit Profile
           </a>
-          <a href="https://github.com/asheerrizvi/diario-f" target="_blank" class="button is-rounded" *ngIf="!isAuthenticated">
-            <span class="icon">
-              <fa-icon [icon]="faGithub"></fa-icon>
-            </span>
-            <span>
-              Github
-            </span>
-          </a>
-          <a class="button is-rounded" (click)="onLogout()" *ngIf="isAuthenticated">
-            <span class="icon">
+          <a class="navbar-item" (click)="onLogout()">
+            <span class="icon" style="margin-right: 0.45rem; color: #F15056;">
               <fa-icon [icon]="faSignOutAlt"></fa-icon>
             </span>
-            <span>
-              Logout
-            </span>
+            Logout
           </a>
         </div>
       </div>
