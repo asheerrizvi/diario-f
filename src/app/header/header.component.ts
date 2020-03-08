@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   faUser = faUser;
   faEdit = faEdit;
   mode: string;
+  dropdownOpen = false;
 
   constructor(
     private router: Router,
@@ -53,12 +54,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   toggleDropdown() {
-    console.log('Function fired');
+    this.dropdownOpen = !this.dropdownOpen;
     this.dropdown.nativeElement.classList.toggle('is-active');
   }
 
-  onClickOutside(e: Event) {
-    this.toggleDropdown();
+  closeDropdown() {
+    if (this.dropdownOpen) {
+      this.toggleDropdown();
+    }
   }
 
   ngOnDestroy() {

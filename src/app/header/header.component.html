@@ -19,7 +19,7 @@
         </a>
       </div>
       
-      <div class="navbar-item has-dropdown" *ngIf="isAuthenticated" (clickOutside)="onClickOutside($event)" #dropdown>
+      <div class="navbar-item has-dropdown" *ngIf="isAuthenticated" (clickOutside)="closeDropdown()" #dropdown>
         <a class="navbar-link" style="border-radius: 10px;" (click)="toggleDropdown()">
           <span class="icon">
             <fa-icon [icon]="faUser" style="font-size: 20px;"></fa-icon>
