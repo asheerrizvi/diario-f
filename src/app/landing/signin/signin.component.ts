@@ -38,7 +38,6 @@ export class SigninComponent implements OnInit, OnDestroy {
     const signinObservable = this.authService.signin(email, password);
 
     signinObservable.subscribe(response => {
-      console.log(response);
       this.isLoading = false;
       this.router.navigate(['/notes']);
     }, (errorMessage) => {
