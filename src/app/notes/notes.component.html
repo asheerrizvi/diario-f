@@ -1,74 +1,81 @@
 <div class="columns">
-    <div class="column is-6">
-        <div class="card">
-            <div class="card-content">
-                <div class="columns is-vcentered">
-                    <div class="column">
-                        <p class="subtitle" style="color: white;">Today is</p>
-                        <p class="title is-3" style="color: white;">{{ now }}</p>
-                    </div>
-                    <div class="column">
-                        <button class="button is-medium is-pulled-right new-item">
-                            <span class="icon">
-                                <fa-icon [icon]="faPlus"></fa-icon>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <p class="title is-5">Events</p>
-        <div class="column" style="padding: 0;">
-            <article class="message">
-                <div class="message-body">
-                    <p class="event-title"><strong>Town Hall Meeting</strong></p>
-                    <p class="event-date"><i>10 am, Oct 15th</i></p>
-                </div>
-            </article>
-            <article class="message">
-                <div class="message-body">
-                    <p class="event-title"><strong>Town Hall Meeting</strong></p>
-                    <p class="event-date">Oct 15</p>
-                </div>
-            </article>
-            <article class="message">
-                <div class="message-body">
-                    <p class="event-title"><strong>Town Hall Meeting</strong></p>
-                    <p class="event-date">Oct 15</p>
-                </div>
-            </article>
-            <article class="message">
-                <div class="message-body">
-                    <p class="event-title"><strong>Town Hall Meeting</strong></p>
-                    <p class="event-date">Oct 15</p>
-                </div>
-            </article>
-            <article class="message">
-                <div class="message-body">
-                    <p class="event-title"><strong>Town Hall Meeting</strong></p>
-                    <p class="event-date">Oct 15</p>
-                </div>
-            </article>
-        </div>
-    </div>
-    <div class="column is-6">
-        <div class="field">
-            <div class="control">
-                <textarea class="textarea is-large" placeholder="Quick Note"></textarea>
-            </div>
-        </div>
-        <div class="field is-grouped is-pulled-right">
-            <p class="control">
-              <button class="button is-link is-rounded">
-                Save
-              </button>
-            </p>
-            <p class="control">
-              <button class="button is-rounded" style="background-color: #F15056; color: white;">
-                Cancel
-              </button>
-            </p>
+  <div class="column is-6">
+    <div class="card">
+      <div class="card-content">
+        <div class="columns is-vcentered">
+          <div class="column">
+            <p class="subtitle" style="color: white;">Today is</p>
+            <p class="title is-3" style="color: white;">{{ now }}</p>
           </div>
+          <div class="column">
+            <button class="button is-medium is-pulled-right new-item">
+              <span class="icon">
+                <fa-icon [icon]="faPlus"></fa-icon>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+    <hr />
+    <p class="title is-5">Events</p>
+    <div class="column" style="padding: 0;">
+      <article class="message">
+        <div class="message-body">
+          <p class="event-title"><strong>Town Hall Meeting</strong></p>
+          <p class="event-date"><i>10 am, Oct 15th</i></p>
+        </div>
+      </article>
+      <article class="message">
+        <div class="message-body">
+          <p class="event-title"><strong>Town Hall Meeting</strong></p>
+          <p class="event-date">Oct 15</p>
+        </div>
+      </article>
+      <article class="message">
+        <div class="message-body">
+          <p class="event-title"><strong>Town Hall Meeting</strong></p>
+          <p class="event-date">Oct 15</p>
+        </div>
+      </article>
+      <article class="message">
+        <div class="message-body">
+          <p class="event-title"><strong>Town Hall Meeting</strong></p>
+          <p class="event-date">Oct 15</p>
+        </div>
+      </article>
+      <article class="message">
+        <div class="message-body">
+          <p class="event-title"><strong>Town Hall Meeting</strong></p>
+          <p class="event-date">Oct 15</p>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="column is-6">
+    <div class="field">
+      <div class="control">
+        <textarea
+          class="textarea is-large"
+          placeholder="Quick Note"
+          style="border-radius: 10px"
+        ></textarea>
+      </div>
+    </div>
+    <div class="field is-grouped is-pulled-right">
+      <p class="control">
+        <button class="button is-primary is-rounded">
+          Save
+        </button>
+      </p>
+      <p class="control">
+        <button
+          class="button is-rounded"
+          style="background-color: #F15056; color: white;"
+        >
+          Cancel
+        </button>
+      </p>
+    </div>
+  </div>
 </div>

@@ -19,10 +19,10 @@
         </a>
       </div>
       
-      <div class="navbar-item has-dropdown is-hoverable" *ngIf="isAuthenticated">
-        <a class="navbar-link" style="border-radius: 10px;">
+      <div class="navbar-item has-dropdown" *ngIf="isAuthenticated" (clickOutside)="onClickOutside($event)" #dropdown>
+        <a class="navbar-link" style="border-radius: 10px;" (click)="toggleDropdown()">
           <span class="icon">
-            <fa-icon [icon]="faUser" style="font-size: 22px;"></fa-icon>
+            <fa-icon [icon]="faUser" style="font-size: 20px;"></fa-icon>
           </span>
         </a>
         <div class="navbar-dropdown is-boxed">

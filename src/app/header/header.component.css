@@ -21,3 +21,7 @@
 a.navbar-link::after {
     border-color: #8D6B94;
 }
+
+.navbar-dropdown {
+    font-size: 1rem;
+}

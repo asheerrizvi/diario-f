@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { faSignOutAlt, faUser, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private isAuthenticated = false;
   private modeSubscription: Subscription;
   private userSubscription: Subscription;
+
+  @ViewChild('dropdown', {static: false}) dropdown: ElementRef;
 
   faSignOutAlt = faSignOutAlt;
   faUser = faUser;
@@ -48,6 +50,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.authService.logout();
+  }
+
+  toggleDropdown() {
+    console.log('Function fired');
+    this.dropdown.nativeElement.classList.toggle('is-active');
+  }
+
+  onClickOutside(e: Event) {
+    this.toggleDropdown();
   }
 
   ngOnDestroy() {
