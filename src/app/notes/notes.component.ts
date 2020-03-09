@@ -15,6 +15,10 @@ export class NotesComponent implements OnInit, OnDestroy {
   localeString = 'en';
   viewDate: any;
   subscription: Subscription;
+  temperature: number;
+  description: string;
+  location: string;
+  icon: string;
 
   now = moment().format('MMM Do, YYYY');
 
@@ -28,7 +32,10 @@ export class NotesComponent implements OnInit, OnDestroy {
 
     this.subscription = this.weatherService.weatherChanged.subscribe(
       weatherData => {
-        console.log(weatherData.weather[0], weatherData.name);
+        this.temperature = Math.round(weatherData.main.temp - 273.5);
+        this.description = weatherData.weather[0].main;
+        this.location = weatherData.name;
+        this.icon = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`;
       }
     );
   }

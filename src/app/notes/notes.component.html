@@ -5,7 +5,13 @@
         <div class="columns is-vcentered">
           <div class="column">
             <p class="subtitle" style="color: white;">Today is</p>
-            <p class="title is-3" style="color: white;">{{ now }}</p>
+            <p class="title is-2" style="color: white;">{{ now }}</p>
+          </div>
+          <div class="column">
+            <div class="weather is-pulled-right">
+              <p class="title is-2" style="color: white; text-align: right;">{{ temperature }}&deg;C</p>
+              <p class="subtitle" style="color: white;">{{ description }}, {{ location }}</p>
+            </div>
           </div>
           <!-- <div class="column">
             <button class="button is-medium is-pulled-right new-item">
