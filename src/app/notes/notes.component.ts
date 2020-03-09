@@ -21,8 +21,17 @@ export class NotesComponent implements OnInit {
   ngOnInit() {
     moment.locale(this.localeString);
     this.viewDate = moment();
-    this.weatherService.getWeather().subscribe(response => {
-      console.log(response);
-    });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const lon = position.coords.longitude;
+        const lat = position.coords.latitude;
+
+        console.log(`Latitude: ${lat}, Longitude: ${lon}`);
+
+        this.weatherService.getWeatherInfo(lat, lon).subscribe(response => {
+          console.log(response);
+        });
+      });
+    }
   }
 }
