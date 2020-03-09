@@ -1,17 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { tap } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
+  weatherData: any;
+  weatherChanged = new Subject<any>();
 
   constructor(private http: HttpClient) { }
 
   getWeatherInfo(latitude: number, longitude: number) {
     return this.http.get<any>(
       `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${environment.openweatherAPI}`
+    ).pipe(
+      tap(response => {
+        this.weatherData = response;
+        this.weatherChanged.next(this.weatherData);
+      })
     );
   }
 }
