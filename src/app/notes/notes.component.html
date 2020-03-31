@@ -2,89 +2,43 @@
   <div class="column is-12">
     <div class="card">
       <div class="card-content">
-        <div class="columns is-vcentered">
-          <div class="column">
-            <p class="subtitle" style="color: white;">Today is</p>
-            <p class="title is-2" style="color: white;">{{ now }}</p>
+        <div class="columns">
+          <div class="column is-2" style="border-right: 1px solid #F2F2F2; padding-right: 0; padding-top: 1.5rem;">
+            <aside class="menu">
+              <p class="menu-label">
+                General
+              </p>
+              <ul class="menu-list">
+                <li><a class="is-active">
+                  <fa-icon [icon]="faLayerGroup"></fa-icon>Dashboard
+                </a></li>
+              </ul>
+              <p class="menu-label">
+                Planner
+              </p>
+              <ul class="menu-list">
+                <li><a><fa-icon [icon]="faQuoteLeft"></fa-icon>Notes</a></li>
+                <li><a><fa-icon [icon]="faCalendarCheck"></fa-icon>Events</a></li>
+              </ul>
+              <p class="menu-label">
+                User
+              </p>
+              <ul class="menu-list">
+                <li><a><fa-icon [icon]="faUser"></fa-icon>Edit Profile</a></li>
+                <li><a><fa-icon [icon]="faSignOutAlt"></fa-icon>Log Out</a></li>
+              </ul>
+            </aside>
           </div>
-          <div class="column">
-            <div class="weather is-pulled-right">
-              <p class="title is-2" style="color: white; text-align: right;">{{ temperature }}&deg;C</p>
-              <p class="subtitle" style="color: white;">{{ description }}, {{ location }}</p>
+          <div class="column is-5" style="border-right: 1px solid #F2F2F2; padding: 0;">
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-medium" type="text" placeholder="Search">
+              <span class="icon is-medium is-left" style="padding-left: 0.5rem;">
+                <fa-icon [icon]="faSearch"></fa-icon>
+              </span>
             </div>
           </div>
-          <!-- <div class="column">
-            <button class="button is-medium is-pulled-right new-item">
-              <span class="icon">
-                <fa-icon [icon]="faPlus"></fa-icon>
-              </span>
-            </button>
-          </div> -->
         </div>
       </div>
-    </div>
-    <hr />
-  </div>
-  <div class="column is-6">
-    <p class="title is-5">Events</p>
-    <div class="column" style="padding: 0;">
-      <article class="message">
-        <div class="message-body">
-          <p class="event-title"><strong>Town Hall Meeting</strong></p>
-          <p class="event-date"><i>10 am, Oct 15th</i></p>
-        </div>
-      </article>
-      <article class="message">
-        <div class="message-body">
-          <p class="event-title"><strong>Town Hall Meeting</strong></p>
-          <p class="event-date">Oct 15</p>
-        </div>
-      </article>
-      <article class="message">
-        <div class="message-body">
-          <p class="event-title"><strong>Town Hall Meeting</strong></p>
-          <p class="event-date">Oct 15</p>
-        </div>
-      </article>
-      <article class="message">
-        <div class="message-body">
-          <p class="event-title"><strong>Town Hall Meeting</strong></p>
-          <p class="event-date">Oct 15</p>
-        </div>
-      </article>
-      <article class="message">
-        <div class="message-body">
-          <p class="event-title"><strong>Town Hall Meeting</strong></p>
-          <p class="event-date">Oct 15</p>
-        </div>
-      </article>
-    </div>
-  </div>
-  <div class="column is-6">
-    <p class="title is-5">Notes</p>
-    <div class="field">
-      <div class="control">
-        <textarea
-          class="textarea is-medium"
-          placeholder="Quick Note"
-          style="border-radius: 10px"
-        ></textarea>
-      </div>
-    </div>
-    <div class="field is-grouped is-pulled-right">
-      <p class="control">
-        <button class="button is-primary is-rounded">
-          Save
-        </button>
-      </p>
-      <p class="control">
-        <button
-          class="button is-rounded"
-          style="background-color: #F15056; color: white;"
-        >
-          Cancel
-        </button>
-      </p>
     </div>
   </div>
 </div>

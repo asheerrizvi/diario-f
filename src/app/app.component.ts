@@ -17,13 +17,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.authService.autoLogin();
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const lon = position.coords.longitude;
-        const lat = position.coords.latitude;
-
-        this.weatherService.getWeatherInfo(lat, lon).subscribe();
-      });
-    }
   }
 }

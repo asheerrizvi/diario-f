@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faLayerGroup, faQuoteLeft, faCalendarCheck, faUser, faSignOutAlt, faBook, faSearch } from '@fortawesome/free-solid-svg-icons';
 import * as moment from 'moment';
 import { WeatherService } from './weather.service';
 import { Subscription } from 'rxjs';
@@ -10,8 +10,15 @@ import { Subscription } from 'rxjs';
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.css']
 })
-export class NotesComponent implements OnInit, OnDestroy {
-  faPlus = faPlus;
+export class NotesComponent implements OnInit {
+  faLayerGroup = faLayerGroup;
+  faQuoteLeft = faQuoteLeft;
+  faCalendarCheck = faCalendarCheck;
+  faUser = faUser;
+  faSignOutAlt = faSignOutAlt;
+  faBook = faBook;
+  faSearch = faSearch;
+
   localeString = 'en';
   viewDate: any;
   subscription: Subscription;
@@ -20,7 +27,9 @@ export class NotesComponent implements OnInit, OnDestroy {
   location: string;
   icon: string;
 
-  now = moment().format('MMM Do, YYYY');
+  month = moment().format('MMM');
+  day = moment().format('D');
+  year = moment().format('YYYY');
 
   constructor(
     private weatherService: WeatherService
@@ -30,17 +39,19 @@ export class NotesComponent implements OnInit, OnDestroy {
     moment.locale(this.localeString);
     this.viewDate = moment();
 
-    this.subscription = this.weatherService.weatherChanged.subscribe(
-      weatherData => {
-        this.temperature = Math.round(weatherData.main.temp - 273.5);
-        this.description = weatherData.weather[0].main;
-        this.location = weatherData.name;
-        this.icon = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`;
-      }
-    );
-  }
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const lon = position.coords.longitude;
+        const lat = position.coords.latitude;
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+        this.weatherService.getWeatherInfo(lat, lon).subscribe(
+          weatherData => {
+            this.temperature = Math.round(weatherData.main.temp - 273.5);
+            this.description = weatherData.weather[0].main;
+            this.location = weatherData.name;
+          }
+        );
+      });
+    }
   }
 }

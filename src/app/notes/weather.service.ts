@@ -8,19 +8,12 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class WeatherService {
-  weatherData: any;
-  weatherChanged = new Subject<any>();
 
   constructor(private http: HttpClient) { }
 
   getWeatherInfo(latitude: number, longitude: number) {
     return this.http.get<any>(
       `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${environment.openweatherAPI}`
-    ).pipe(
-      tap(response => {
-        this.weatherData = response;
-        this.weatherChanged.next(this.weatherData);
-      })
     );
   }
 }
