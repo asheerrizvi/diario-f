@@ -7,11 +7,6 @@
     background: white;
 }
 
-.card-content {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
 .news-reel {
     overflow-y: scroll;
     height: calc(100% - 50px);
@@ -22,6 +17,7 @@
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
     border-bottom: 1px solid #f2f2f2;
+    border-radius: 0;
 }
 
 fa-icon {
