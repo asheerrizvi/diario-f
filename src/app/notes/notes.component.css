@@ -3,13 +3,18 @@
 }
 
 .card {
-    border-radius: 8px;
+    border-radius: 15px;
     background: white;
 }
 
 .card-content {
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.news-reel {
+    overflow-y: scroll;
+    height: calc(100% - 50px);
 }
 
 .news-card {
@@ -19,40 +24,8 @@
     border-bottom: 1px solid #f2f2f2;
 }
 
-::-webkit-scrollbar
-{
-	width: 5px;
-	background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #555;
-}
-
-.new-item {
-    border: 2px solid rgba(#FFF, 0.6);
-    border-radius: 50%;
-    box-shadow: 0px 10px 30px -14px rgb(117, 117, 117);
-    transition: all 350ms ease;
-    transition-timing-function: cubic-bezier(0.05,1.8,1,1.57);
-}
-
 fa-icon {
     margin-right: 0.5rem;
-}
-
-.message {
-    margin-bottom: 1rem;
-}
-
-.message-body {
-    border-width: 0 0 0 4px;
-    border-color: #8D6B94;
-    padding: 0.5rem 1.5rem;
-    border-radius: 0;
 }
 
 .is-active {
@@ -63,4 +36,42 @@ fa-icon {
     box-shadow: none;
     border: 0;
     border-bottom: 1px solid #f2f2f2;
+    max-height: 50px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f2f2f2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f2f2f2;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #f2f2f2;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: transparent;
+}
+
+::-webkit-scrollbar-track:active {
+    background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
 }
