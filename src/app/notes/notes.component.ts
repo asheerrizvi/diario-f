@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { faLayerGroup, faQuoteLeft, faCalendarCheck, faUser, faSignOutAlt, faBook, faSearch } from '@fortawesome/free-solid-svg-icons';
 import * as moment from 'moment';
@@ -31,6 +31,13 @@ export class NotesComponent implements OnInit {
   day = moment().format('D');
   year = moment().format('YYYY');
 
+  imageIndex = 0;
+  images = [
+    'https://naver.github.io/egjs-flicking/images/bg01.jpg',
+    'https://naver.github.io/egjs-flicking/images/bg02.jpg',
+    'https://naver.github.io/egjs-flicking/images/bg03.jpg'
+  ];
+
   constructor(
     private weatherService: WeatherService
   ) { }
@@ -53,5 +60,21 @@ export class NotesComponent implements OnInit {
         );
       });
     }
+  }
+
+  changeSlide(n) {
+    const changedIndex = this.imageIndex + n;
+
+    if (changedIndex < 0) {
+      this.imageIndex = this.images.length - 1;
+    } else if (changedIndex > this.images.length - 1) {
+      this.imageIndex = 0;
+    } else {
+      this.imageIndex = changedIndex;
+    }
+  }
+
+  currentSlide(n) {
+    this.imageIndex = n;
   }
 }

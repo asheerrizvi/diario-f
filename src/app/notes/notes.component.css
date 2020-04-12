@@ -1,91 +1,204 @@
 .columns {
-    height: 70vh;
+  height: 70vh;
 }
 
 .column {
-    max-height: 100%;
+  max-height: 100%;
 }
 
 .card {
-    border-radius: 15px;
-    background: white;
+  border-radius: 15px;
+  background: white;
 }
 
 .dashboard-content {
-    padding-top: 0;
-    padding-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .news-reel {
-    overflow-y: scroll;
-    height: calc(100% - 50px);
+  overflow-y: scroll;
+  height: calc(100% - 50px);
 }
 
 .news-card {
-    box-shadow: none;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    border-radius: 15px;
-    background-color: #f2f2f2;
-    margin: 1rem;
+  box-shadow: none;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-radius: 15px;
+  background-color: #f2f2f2;
+  margin: 1rem;
 }
 
 fa-icon {
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .is-active {
-    background-color: #8D6B94 !important;
+  background-color: #8d6b94 !important;
 }
 
 .weather {
-    background: rgb(0,105,153);
-    background: linear-gradient(180deg, rgba(0,105,153,1) 0%, rgba(246,209,200,1) 90%, rgba(243,172,92,1) 100%);
-    border-radius: 15px;
-    margin: 1rem;
+  background: rgb(0, 105, 153);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 105, 153, 1) 0%,
+    rgba(246, 209, 200, 1) 90%,
+    rgba(243, 172, 92, 1) 100%
+  );
+  border-radius: 15px;
+  margin: 1rem;
 }
 
 .menu-list a {
-    border-radius: 25px;
-    font-size: 1.15rem;
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    padding-left: 1.25rem;
+  border-radius: 25px;
+  font-size: 1.15rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 1.25rem;
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+  width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-button {
-    width: 0px;
-    height: 0px;
+  width: 0px;
+  height: 0px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #f2f2f2;
+  background: #f2f2f2;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #f2f2f2;
+  background: #f2f2f2;
 }
 ::-webkit-scrollbar-thumb:active {
-    background: #f2f2f2;
+  background: #f2f2f2;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-track:hover {
-    background: transparent;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-track:active {
-    background: transparent;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-corner {
-    background: transparent;
+  background: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: block;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
