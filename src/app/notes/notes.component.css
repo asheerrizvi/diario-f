@@ -18,7 +18,7 @@
   padding-left: 1.25rem;
 }
 
-.news-card {
+.card {
   margin: 1rem;
   border-radius: 25px;
 }
@@ -28,39 +28,29 @@
   border-top-left-radius: 25px;
 }
 
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+.weekday {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-::-webkit-scrollbar-button {
-  width: 0px;
-  height: 0px;
+.date {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  margin-top: -0.25rem;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #f2f2f2;
+.location {
+  font-size: 1.25rem;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #f2f2f2;
-}
-::-webkit-scrollbar-thumb:active {
-  background: #f2f2f2;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
+.temperature {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-top: 1.75rem;
 }
 
-::-webkit-scrollbar-track:hover {
-  background: transparent;
-}
-
-::-webkit-scrollbar-track:active {
-  background: transparent;
-}
-
-::-webkit-scrollbar-corner {
-  background: transparent;
+.description {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: -0.35rem;
 }

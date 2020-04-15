@@ -63,7 +63,7 @@
       </ul>
     </aside>
   </div>
-  <div class="column is-6">
+  <div class="column is-4">
     <p class="title is-3" style="margin-left: 1rem; margin-right: 1rem;">
       News Digest
     </p>
@@ -79,15 +79,11 @@
         </figure>
       </div>
       <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">
-              Floating Point Group, An MIT Crypto Fintech Startup, Modernizes
-              Digital Currency Trading
-            </p>
-            <p class="subtitle is-6">Forbes.com</p>
-          </div>
-        </div>
+        <p class="title is-5">
+          Floating Point Group, An MIT Crypto Fintech Startup, Modernizes
+          Digital Currency Trading
+        </p>
+        <p class="subtitle is-6"><a href="https://forbes.com">Forbes.com</a></p>
 
         <div class="content">
           For someone interested in purchasing these coins, they may face
@@ -104,32 +100,41 @@
       class="pagination is-centered is-rounded"
       role="navigation"
       aria-label="pagination"
-      style="margin: 1rem;"
+      style="margin: 1rem; margin-top: 1.75rem; margin-bottom: 1.75rem;"
     >
-      <a class="pagination-previous">Previous</a>
-      <a class="pagination-next">Next page</a>
+      <a class="pagination-previous">Prev</a>
       <ul class="pagination-list">
         <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
-        <li><span class="pagination-ellipsis">&hellip;</span></li>
-        <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
         <li>
           <a
             class="pagination-link is-current"
-            aria-label="Page 46"
+            aria-label="Page 2"
             aria-current="page"
-            >46</a
+            >2</a
           >
         </li>
-        <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
-        <li><span class="pagination-ellipsis">&hellip;</span></li>
-        <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+        <li><a class="pagination-link" aria-label="Goto page 3">3</a></li>
       </ul>
+      <a class="pagination-next">Next</a>
     </nav>
   </div>
-  <!-- <div class="column is-4">
+  <div class="column is-6">
     <p class="title is-3" style="margin-left: 1rem; margin-right: 1rem;">
       Weather
     </p>
-    <div class="weather" style="height: 50%;"></div>
-  </div> -->
+    <div class="card">
+      <div class="card-content">
+        <p class="weekday">{{weekday}}</p>
+        <p class="date">{{day}} {{month}} {{year}}</p>
+        <div class="location">
+          <fa-icon
+          class="has-text-primary"
+          [icon]="faMapMarkerAlt"
+          ></fa-icon> {{city}}, {{country}}
+        </div>
+        <p class="temperature">{{temperature}}&deg;C</p>
+        <p class="description">{{description}}</p>
+      </div>
+    </div>
+  </div>
 </div>
