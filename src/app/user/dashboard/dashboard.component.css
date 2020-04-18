@@ -1,25 +1,4 @@
-.columns {
-  height: 70vh;
-}
-
-.column {
-  max-height: 100%;
-}
-
-.side-menu-icon {
-  margin-right: 0.5rem;
-}
-
-.menu-list a {
-  border-radius: 25px;
-  font-size: 1.15rem;
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
-  padding-left: 1.25rem;
-}
-
 .card {
-  margin: 1rem;
   border-radius: 25px;
 }
 
@@ -31,11 +10,12 @@
 .weekday {
   font-size: 1.5rem;
   font-weight: 600;
+  margin-top: 1.5rem;
 }
 
 .date {
   font-size: 1.25rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   margin-top: -0.25rem;
 }
 
@@ -44,13 +24,30 @@
 }
 
 .temperature {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-top: 1.75rem;
+  font-size: 2.75rem;
+  font-weight: 600;
 }
 
 .description {
   font-size: 1.25rem;
   font-weight: 600;
   margin-top: -0.35rem;
+}
+
+.upcoming-events {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.message {
+  margin-bottom: 1rem;
+}
+
+.message-body {
+  border-width: 0 0 0 5px;
+  border-color: #8d6b94;
+  padding: 0.15rem 1rem;
+  border-radius: 0;
+  background-color: #fff;
 }

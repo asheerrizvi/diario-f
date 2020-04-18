@@ -4,8 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { SigninComponent } from './landing/signin/signin.component';
 import { SignupComponent } from './landing/signup/signup.component';
-import { NotesComponent } from './notes/notes.component';
+import { UserComponent } from './user/user.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { DashboardComponent } from './user/dashboard/dashboard.component';
 
 const appRoutes: Routes = [
     {
@@ -17,8 +18,12 @@ const appRoutes: Routes = [
         ]
     },
     {
-        path: 'notes',
-        component: NotesComponent,
+        path: 'user',
+        component: UserComponent,
+        children: [
+            { path: '', component: DashboardComponent },
+            // { path: 'notes', component: NotesComponent }
+        ],
         canActivate: [AuthGuard]
     },
 ];

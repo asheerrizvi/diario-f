@@ -1,0 +1,125 @@
+<div class="columns">
+  <div class="column is-6">
+    <p class="title is-3">
+      Hello, Asheer!
+    </p>
+    <div class="card">
+      <div class="card-content">
+        <div class="events" style="margin-bottom: 2rem;">
+          <p class="upcoming-events">Upcoming Events</p>
+          <article class="message">
+            <div class="message-body" style="border-color: hsl(48, 100%, 67%);">
+              <p class="event-title"><strong>Town Hall Meeting</strong></p>
+              <p class="event-date">10 PM, 15th Oct</p>
+            </div>
+          </article>
+
+          <article class="message">
+            <div
+              class="message-body"
+              style="border-color: hsl(171, 100%, 41%);"
+            >
+              <p class="event-title"><strong>Deploy Dashboard</strong></p>
+              <p class="event-date">04 PM, 12th Oct</p>
+            </div>
+          </article>
+
+          <article class="message">
+            <div
+              class="message-body"
+              style="border-color: hsl(348, 100%, 61%);"
+            >
+              <p class="event-title"><strong>Implement Events Tab</strong></p>
+              <p class="event-date">09 AM, 9th Oct</p>
+            </div>
+          </article>
+        </div>
+        <div class="field is-grouped">
+          <p class="control">
+            <button class="button is-info is-rounded">
+              Create Note
+            </button>
+          </p>
+          <p class="control">
+            <button class="button is-success is-rounded">
+              Add Event
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p class="title is-3" style="margin-top: 2rem;">
+      Weather
+    </p>
+    <div class="card">
+      <div class="card-content">
+        <p class="temperature">{{ temperature }}&deg; Celcius</p>
+        <p class="description">{{ description }}</p>
+
+        <p class="weekday">{{ weekday }}</p>
+        <p class="date">{{ day }} {{ month }} {{ year }}</p>
+        <div class="location">
+          <fa-icon class="has-text-primary" [icon]="faMapMarkerAlt"></fa-icon>
+          {{ city }}, {{ country }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-6">
+    <p class="title is-3">
+      News Digest
+    </p>
+
+    <div class="card news-card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img
+            src="https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5e937d27892edc000672650d%2F0x0.jpg"
+            alt="Placeholder image"
+            class="news-image"
+          />
+        </figure>
+      </div>
+      <div class="card-content">
+        <p class="title is-5">
+          Floating Point Group, An MIT Crypto Fintech Startup, Modernizes
+          Digital Currency Trading
+        </p>
+        <p class="subtitle is-6"><a href="https://forbes.com">Forbes.com</a></p>
+
+        <div class="content">
+          For someone interested in purchasing these coins, they may face
+          problems associated with liquidity when trading. John Peurifoy, Kevin
+          March, and Van Phu recognized the demand for a platform to exchange
+          lesser-known cryptocurrencies at stable prices and create…
+          <br />
+          <time datetime="2016-1-1"></time>
+        </div>
+      </div>
+    </div>
+
+    <nav
+      class="pagination is-centered is-rounded"
+      role="navigation"
+      aria-label="pagination"
+      style="margin-top: 1.75rem; margin-bottom: 1.75rem;"
+    >
+      <a class="pagination-previous">Prev</a>
+      <ul class="pagination-list">
+        <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+        <li>
+          <a
+            class="pagination-link is-current"
+            aria-label="Page 2"
+            aria-current="page"
+            >2</a
+          >
+        </li>
+        <li><a class="pagination-link" aria-label="Goto page 3">3</a></li>
+      </ul>
+      <a class="pagination-next">Next</a>
+    </nav>
+  </div>
+</div>

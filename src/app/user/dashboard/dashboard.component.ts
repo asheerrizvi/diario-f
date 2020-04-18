@@ -1,32 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-
-import {
-  faLayerGroup,
-  faQuoteLeft,
-  faCalendarCheck,
-  faUser,
-  faSignOutAlt,
-  faBook,
-  faSearch,
-  faMapMarkerAlt,
-} from '@fortawesome/free-solid-svg-icons';
-import * as moment from 'moment';
-import { WeatherService } from './weather.service';
 import { Subscription } from 'rxjs';
 
+import * as moment from 'moment';
+import { WeatherService } from '../weather.service';
+
+import {
+  faMapMarkerAlt
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
-  selector: 'app-notes',
-  templateUrl: './notes.component.html',
-  styleUrls: ['./notes.component.css'],
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
 })
-export class NotesComponent implements OnInit {
-  faLayerGroup = faLayerGroup;
-  faQuoteLeft = faQuoteLeft;
-  faCalendarCheck = faCalendarCheck;
-  faUser = faUser;
-  faSignOutAlt = faSignOutAlt;
-  faBook = faBook;
-  faSearch = faSearch;
+export class DashboardComponent implements OnInit {
   faMapMarkerAlt = faMapMarkerAlt;
 
   localeString = 'en';
@@ -41,13 +28,6 @@ export class NotesComponent implements OnInit {
   day = moment().format('D');
   month = moment().format('MMM');
   year = moment().format('YYYY');
-
-  imageIndex = 0;
-  images = [
-    'https://naver.github.io/egjs-flicking/images/bg01.jpg',
-    'https://naver.github.io/egjs-flicking/images/bg02.jpg',
-    'https://naver.github.io/egjs-flicking/images/bg03.jpg',
-  ];
 
   constructor(private weatherService: WeatherService) {}
 
@@ -70,21 +50,5 @@ export class NotesComponent implements OnInit {
           });
       });
     }
-  }
-
-  changeSlide(n) {
-    const changedIndex = this.imageIndex + n;
-
-    if (changedIndex < 0) {
-      this.imageIndex = this.images.length - 1;
-    } else if (changedIndex > this.images.length - 1) {
-      this.imageIndex = 0;
-    } else {
-      this.imageIndex = changedIndex;
-    }
-  }
-
-  currentSlide(n) {
-    this.imageIndex = n;
   }
 }
