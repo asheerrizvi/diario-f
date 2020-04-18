@@ -7,6 +7,9 @@ import { SignupComponent } from './landing/signup/signup.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
+import { NotesComponent } from './user/notes/notes.component';
+import { EventsComponent } from './user/events/events.component';
+import { ProfileComponent } from './user/profile/profile.component';
 
 const appRoutes: Routes = [
     {
@@ -14,6 +17,7 @@ const appRoutes: Routes = [
         component: LandingComponent,
         children: [
             { path: '', component: SigninComponent },
+            { path: 'signin', redirectTo: ''},
             { path: 'signup', component: SignupComponent }
         ]
     },
@@ -21,8 +25,11 @@ const appRoutes: Routes = [
         path: 'user',
         component: UserComponent,
         children: [
-            { path: '', component: DashboardComponent },
-            // { path: 'notes', component: NotesComponent }
+            { path: 'dashboard', component: DashboardComponent },
+            { path: 'notes', component: NotesComponent },
+            { path: 'events', component: EventsComponent },
+            { path: 'profile', component: ProfileComponent },
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full'}
         ],
         canActivate: [AuthGuard]
     },

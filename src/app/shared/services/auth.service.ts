@@ -79,7 +79,7 @@ export class AuthService {
 
     if (loadedUser.token) {
       this.user.next(loadedUser);
-      this.router.navigate(['/user']);
+      this.router.navigate(['user']);
     }
   }
 

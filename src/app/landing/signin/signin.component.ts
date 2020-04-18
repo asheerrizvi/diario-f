@@ -39,7 +39,7 @@ export class SigninComponent implements OnInit, OnDestroy {
 
     signinObservable.subscribe(response => {
       this.isLoading = false;
-      this.router.navigate(['']);
+      this.router.navigate(['user']);
     }, (errorMessage) => {
       this.isLoading = false;
       this.error = errorMessage;
