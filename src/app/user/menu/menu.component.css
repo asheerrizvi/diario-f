@@ -1,0 +1,11 @@
+.side-menu-icon {
+  padding-right: 0.5rem;
+}
+
+.menu-list a {
+  border-radius: 25px;
+  font-size: 1.15rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 1.25rem;
+}
